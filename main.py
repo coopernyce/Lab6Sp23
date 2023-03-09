@@ -1,12 +1,19 @@
 def encode(phrase):
     output = ''
     for i in phrase:
-        new_value = (int(i)+ 3) % 10
+        new_value = (int(i) + 3) % 10
         output += str(new_value)
     return output
 
 def decode(phrase):
-    pass
+    output = ''
+    for i in phrase:
+        new_value = ((int(i) + 10) - 3) % 10
+
+        output += str(new_value)
+    return output
+
+
 def main():
     # looping menu
     option = '1'
@@ -25,4 +32,3 @@ def main():
             print('Encoded phrase is', encode(phrase))
         elif option == '3':
             print('Decoded phrase is', decode(phrase))
-
